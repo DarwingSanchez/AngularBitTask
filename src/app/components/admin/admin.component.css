@@ -1,0 +1,11 @@
+.main-adm-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-container{
+  max-width: 350px;
+  min-width: 300px;
+}

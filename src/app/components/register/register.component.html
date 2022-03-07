@@ -1,0 +1,38 @@
+<div class="d-flex flex-wrap gap-2 justify-content-center custom-container ">
+  <div>
+    <form class="m-5" (ngSubmit)="singup(singUpForm)" #singUpForm="ngForm" >
+      <div class="mb-3">
+        <h2>Registrarse</h2>
+        <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+        <input type="email" required autocomplete="email" [(ngModel)]="userService.selectedUser.email" name="email" #emailInput class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Nunca compartiremos tu email.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" [(ngModel)]="userService.selectedUser.password" name="password" #passwordInput class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPasswordConfirm" class="form-label">Confirmar contraseña</label>
+        <input type="password" required [(ngModel)]="confirmPasswor" name="confirmPassword" #passwordInput class="form-control" id="exampleInputPasswordConfirm">
+        <p *ngIf="userService.selectedUser.password != confirmPasswor" class="text-danger">Contraseñas no coinciden</p>
+        <p *ngIf="userService.selectedUser.password == confirmPasswor && confirmPasswor && confirmPasswor" class="text-success">Contraseñas coinciden</p>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputUsername" class="form-label">Nombre de usuario</label>
+        <input type="text" [(ngModel)]="userService.selectedUser.username" name="username" #userNameInput class="form-control" id="exampleInputUsername">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputLastName" class="form-label">last name</label>
+        <input type="text" name="lastName" [(ngModel)]="userService.selectedUser.lastName" #lastNameInput class="form-control" id="exampleInputLastName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputNumber" class="form-label">Phone</label>
+        <input type="number" name="phone" [(ngModel)]="userService.selectedUser.phone" #phoneInput class="form-control" id="exampleInputNumber">
+      </div>
+      <button type="submit" class="btn bg-light">Registrarse</button>
+    </form>
+  </div>
+  <div class="m-5">
+    <img width="300px" src="./../../../assets/img/login-picture.svg" alt="">
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="grid-container">
+  <app-product
+  [product]="product"
+  *ngFor="let product of products"
+  (showProduct)="onShowProductDetail($event)">
+  </app-product>
+</div>

@@ -1,0 +1,54 @@
+<section class="main-adm-section gap-5">
+  <div class="form-container">
+    <form (ngSubmit)="createProduct(registerProductForm)" #registerProductForm="ngForm" >
+      <div class="mb-3">
+        <label for="InputProductName" class="form-label">Product name</label>
+        <input type="text" #NameInput name="name" [(ngModel)]="productService.selectedProduct.name" class="form-control" id="InputProductName" aria-describedby="productName" required placeholder="Add product name">
+      </div>
+      <div class="mb-3">
+        <label for="InputProductPrice" class="form-label">Product price</label>
+        <input type="number" #priceInput name="price" [(ngModel)]="productService.selectedProduct.price" class="form-control" id="InputProductPrice" aria-describedby="productPrice" required placeholder="Add product price">
+      </div>
+      <div class="mb-3">
+        <label for="InputProductItems" class="form-label">Available Items</label>
+        <input type="number" #availableInput name="availableElemnts" [(ngModel)]="productService.selectedProduct.availableElemnts" class="form-control" id="InputProductItems" aria-describedby="productItems" required placeholder="How many items">
+      </div>
+      <div class="mb-3">
+        <label for="InputProductImg" class="form-label">Product image</label>
+        <input type="text" #imageInput name="image" [(ngModel)]="productService.selectedProduct.image" class="form-control" id="InputProductImg" aria-describedby="productImg" required placeholder="Add link image product">
+      </div>
+      <div class="mb-3">
+        <label for="InputProductDescription" class="form-label">Product description</label>
+        <textarea type="text" #descriptionInput name="description" [(ngModel)]="productService.selectedProduct.description" class="form-control" id="InputProductDescription" aria-describedby="productDescription" required placeholder="Add a description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="InputProductTags" class="form-label">Product Tags</label>
+        <input type="text" #tagsInput name="tags" [(ngModel)]="productService.selectedProduct.tags" class="form-control" id="InputProductTag" aria-describedby="productName" required placeholder="Tags separated by one space">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div>
+    <table class="table p-5">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Items</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let product of products">
+        <tr>
+          <!-- <th scope="row"></th> -->
+          <td>{{product._id}}</td>
+          <td><span><img width="25px" src={{product.image}} alt=""></span></td>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency: 'COP'}}</td>
+          <td>{{product.availableElemnts}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

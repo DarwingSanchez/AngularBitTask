@@ -1,0 +1,16 @@
+.navbar-custome{
+  background-color: rgba(255, 255, 255, 0.671);
+}
+.custome-profile-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.custom-profile-container{
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.custom-profile-container img{
+  width: 100%;
+}
